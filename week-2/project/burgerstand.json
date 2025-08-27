@@ -1,0 +1,24 @@
+{
+  "customer": {
+    "_id": "C001",
+    "firstName": "Janice",
+    "lastName": "Joplin",
+    "burgers": [
+      {
+        "_id": "B101",
+        "burgerName": "Classic Cheeseburger",
+        "price": 6.99
+      },
+      {
+        "_id": "B102",
+        "burgerName": "Bacon Double Deluxe",
+        "price": 8.49
+      },
+      {
+        "_id": "B103",
+        "burgerName": "Veggie Supreme",
+        "price": 7.25
+      }
+    ]
+  }
+}
