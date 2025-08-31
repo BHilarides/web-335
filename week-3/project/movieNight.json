@@ -1,0 +1,67 @@
+{
+  "viewers": [
+    {
+      "viewerId": "v001",
+      "fisrtName": "Alice",
+      "lastName": "Johnson"
+    },
+    {
+      "viewerId": "v002",
+      "firstName": "Bob",
+      "lastName": "Smith"
+    },
+    {
+      "viewerId": "v003",
+      "firstName": "Charlie",
+      "lastName": "Brown"
+    }
+  ],
+  "movies": [
+    {
+      "movieId": "m001",
+      "movieName": "Inception",
+      "genre": "Sci-Fi"
+    },
+    {
+      "movieId": "m002",
+      "movieName": "The Godfather",
+      "genre": "Crime"
+    },
+    {
+      "movieId": "m003",
+      "movieName": "Toy Story",
+      "genre": "Animation"
+    },
+    {
+      "movieId": "m004",
+      "title": "The Dark Knight",
+      "genre": "Action"
+    }
+  ],
+  "ratings": [
+    {
+      "ratingId": "r001",
+      "ratingScore": 5,
+      "viewerId": "v001",
+      "movieId": "m001"
+    },
+    {
+      "ratingId": "r002",
+      "ratingScore": 4,
+      "viewerId": "v002",
+      "movieId": "m002"
+    },
+    {
+      "ratingId": "r003",
+      "ratingScore": 3,
+      "viewerId": "v003",
+      "movieId": "m003"
+    },
+    {
+      "ratingId": "r004",
+      "ratingScore": 5,
+      "viewerId": "v001",
+      "movieId": "m004"
+    }
+  ]
+}
