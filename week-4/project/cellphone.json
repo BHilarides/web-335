@@ -1,0 +1,56 @@
+{
+  "users": [
+    {
+      "userId": "u1",
+      "firstName": "Alice",
+      "lastName": "Smith"
+    },
+    {
+      "userId": "u2",
+      "firstName": "Bob",
+      "lastName": "Johnson"
+    },
+    {
+      "userId": "u3",
+      "firstName": "Charlie",
+      "lastName": "Brown"
+    }
+  ],
+  "devices": [
+    {
+      "deviceid": "d1",
+      "deviceName": "Phone 1",
+      "deviceType": "iPhone",
+      "chargerId": "c1"
+    },
+    {
+      "deviceid": "d2",
+      "deviceName": "Phone 2",
+      "deviceType": "Samsung",
+      "chargerId": "c2"
+    },
+    {
+      "deviceid": "d3",
+      "deviceName": "Phone 3",
+      "deviceType": "Google Pixel",
+      "chargerId": "c3"
+    }
+  ],
+  "chargers": [
+    {
+      "chargerId": "c1",
+      "chargerType": "lightning",
+      "voltage": "5V"
+    },
+    {
+      "chargerId": "c2",
+      "chargerType": "USB-C",
+      "voltage": "9V"
+    },
+    {
+      "chargerId": "c3",
+      "chargerType": "USB-C",
+      "voltage": "5V"
+    }
+  ]
+}
