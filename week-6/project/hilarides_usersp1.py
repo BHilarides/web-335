@@ -17,6 +17,19 @@ print(client)
 # Configure a variable to access the database
 db = client['web335DB']
 
-# Call the find function to display all users in collection; use projections to only show first and last name
-for user in db.users.find({}, {"firstName": 1, "lastName": 1}):
-    print(user)
+# Display all documents in the users collection
+print("\n-- DISPLAYING USERS DOCUMENTS FROM find() QUERY --")
+for doc in db.users.find():
+    print(doc)
+
+# Display document by employeeId '1011'
+print("\n-- User with employeeId '1011' --")
+print(db.users.find_one({"employeeId": "1011"}))
+
+# Display user by lastName 'Mozart'
+print("\n-- User with lastName 'Mozart' --")
+print(db.users.find_one({"lastName": "Mozart"}))
+
+# Close Connection
+client.close()
+print("\n-- Connection Closed --")
