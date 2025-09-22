@@ -15,7 +15,7 @@ client = MongoClient("mongodb+srv://web335_admin:J14M7AFCWMF0Hc5D@bellevueuniver
 print(client)
 
 # Configure a variable to access the database
-db = client['web335DB']
+db = client['test']
 
 # Display all documents in the users collection
 print("\n-- DISPLAYING USERS DOCUMENTS FROM find() QUERY --")
