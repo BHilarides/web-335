@@ -136,14 +136,14 @@ def display_customer_wishlist(customers_collection):
   print("=" * 65)
 
   # Prompt user for customerId
-  customer_id_iput = input("\nEnter a Customer ID to view their wishlist (or 'q' to go back): ").strip()
+  customer_id_input = input("\nEnter a Customer ID to view their wishlist (or 'q' to go back): ").strip()
 
   # Add 'c' prefix if missing
-  customer_id = f"c{customer_id_iput}" if not customer_id_iput.startswith('c') else customer_id_iput
+  customer_id = f"c{customer_id_input}" if not customer_id_input.startswith('c') else customer_id_input
 
   # Basic error handling for invalid customerId input
   if customer_id not in valid_customer_ids:
-    print(f"\n Error: Customer ID '{customer_id_iput}' not found. Please us one of the available Customer IDs. ")
+    print(f"\n Error: Customer ID '{customer_id_input}' not found. Please us one of the available Customer IDs. ")
     print("-" * 65)
     return
 
@@ -165,7 +165,7 @@ def display_customer_wishlist(customers_collection):
     else:
       print("\nThis Customer's Wishlist is empty.")
   else:
-    print(f"\n Error: Customer ID '{customer_id_iput}' not found in the database! ")
+    print(f"\n Error: Customer ID '{customer_id_input}' not found in the database! ")
     print("The customer may not exist in database.")
 
   print("-" * 65)
@@ -187,7 +187,7 @@ def main():
   customers_collection = db['customers']
 
   # Main program loop
-  while true:
+  while True:
     display_menu()
     choice = input("Enter your choice (1-4): ").strip()
 
