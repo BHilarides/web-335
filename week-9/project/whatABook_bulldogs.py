@@ -157,10 +157,10 @@ def display_customer_wishlist(customers_collection):
 
     if wishlist:
       for i, book_id in enumerate(wishlist, 1):
-        print(f"\n{i}, {book.get('title', 'Unknown Title')}")
-        print(f"  Author: {book.get('author', 'Unknown Author')}")
-        print(f"  Genre: {book.get('genre', 'Unknown Genre')}")
-        print(f"  Book ID: {book.get('bookId', 'Unknown ID')}")
+        print(f"\n{i}, {book_id.get('title', 'Unknown Title')}")
+        print(f"  Author: {book_id.get('author', 'Unknown Author')}")
+        print(f"  Genre: {book_id.get('genre', 'Unknown Genre')}")
+        print(f"  Book ID: {book_id.get('bookId', 'Unknown ID')}")
       print(f"\nTotal books in wishlist: {len(wishlist)}")
     else:
       print("\nThis Customer's Wishlist is empty.")
