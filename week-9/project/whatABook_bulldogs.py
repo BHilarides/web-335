@@ -91,7 +91,7 @@ def display_books_by_genre(books_collection):
             print(f"\n--- Books in Genre: '{selected_genre}' genre ---")
             if books_in_genre:
                 for i, book in enumerate(books_in_genre, 1):
-                    print(f"\{i}. {book.get('title', 'Unknown Title')}")
+                    print(f"{i}. {book.get('title', 'Unknown Title')}")
                     print(f"  Author: {book.get('author', 'Unknown Author')}")
                     print(f"  Book ID: {book.get('bookId', 'Unknown ID')}")
                 print(f"\nTotal books found in '{selected_genre}': {len(books_in_genre)}")
