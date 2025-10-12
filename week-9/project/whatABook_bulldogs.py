@@ -20,7 +20,7 @@ def connect_to_database():
 
     # Test the connection
     client.admin.command('ping')
-    print(client)
+    print("Connected to MongoDB successfully!")
 
     # Configure a variable to access the database
     db = client['whatABook']
