@@ -47,10 +47,10 @@ def display_all_books(books_collection):
     print("No books found in our database!")
   else:
     for i, book in enumerate(all_books, 1):
-      print(f"\{i}. {book.get('Title', 'Unknown Title')}")
-      print(f"  Author: {book.get('Author', 'Unknown Author')}")
-      print(f"  Genre: {book.get('Genre', 'Unknown Genre')}")
-      print(f"  Book ID: {book.get('BookId', 'Unknown ID')}")
+      print(f"\{i}. {book.get('title', 'Unknown Title')}")
+      print(f"  Author: {book.get('author', 'Unknown Author')}")
+      print(f"  Genre: {book.get('genre', 'Unknown Genre')}")
+      print(f"  Book ID: {book.get('bookId', 'Unknown ID')}")
     print(f"\nTotal books found: {len(list(all_books))}")
   print("-" * 65)
 
@@ -91,9 +91,9 @@ def display_books_by_genre(books_collection):
             print(f"\n--- Books in Genre: '{selected_genre}' genre ---")
             if books_in_genre:
                 for i, book in enumerate(books_in_genre, 1):
-                    print(f"\{i}. {book.get('Title', 'Unknown Title')}")
-                    print(f"  Author: {book.get('Author', 'Unknown Author')}")
-                    print(f"  Book ID: {book.get('BookId', 'Unknown ID')}")
+                    print(f"\{i}. {book.get('title', 'Unknown Title')}")
+                    print(f"  Author: {book.get('author', 'Unknown Author')}")
+                    print(f"  Book ID: {book.get('bookId', 'Unknown ID')}")
                 print(f"\nTotal books found in '{selected_genre}': {len(books_in_genre)}")
             else:
                 print(f"No books found in the '{selected_genre}' genre.")
@@ -157,10 +157,10 @@ def display_customer_wishlist(customers_collection):
 
     if wishlist:
       for i, book_id in enumerate(wishlist, 1):
-        print(f"\n{i}, {book.get('Title', 'Unknown Title')}")
-        print(f"  Author: {book.get('Author', 'Unknown Author')}")
-        print(f"  Genre: {book.get('Genre', 'Unknown Genre')}")
-        print(f"  Book ID: {book.get('BookId', 'Unknown ID')}")
+        print(f"\n{i}, {book.get('title', 'Unknown Title')}")
+        print(f"  Author: {book.get('author', 'Unknown Author')}")
+        print(f"  Genre: {book.get('genre', 'Unknown Genre')}")
+        print(f"  Book ID: {book.get('bookId', 'Unknown ID')}")
       print(f"\nTotal books in wishlist: {len(wishlist)}")
     else:
       print("\nThis Customer's Wishlist is empty.")
