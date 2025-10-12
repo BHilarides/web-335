@@ -47,7 +47,7 @@ def display_all_books(books_collection):
     print("No books found in our database!")
   else:
     for i, book in enumerate(all_books, 1):
-      print(f"\{i}. {book.get('title', 'Unknown Title')}")
+      print(f"{i}. {book.get('title', 'Unknown Title')}")
       print(f"  Author: {book.get('author', 'Unknown Author')}")
       print(f"  Genre: {book.get('genre', 'Unknown Genre')}")
       print(f"  Book ID: {book.get('bookId', 'Unknown ID')}")
@@ -112,7 +112,7 @@ def display_customer_wishlist(customers_collection):
   print("-" * 65)
 
   # Get all available customer IDs from database
-  all_customers = list(customers_collection.find({}, {"customerId": 1, "lastName": 1}))
+  all_customers = list(customers_collection.find({}, {"customerId": 1, "firstName":1, "lastName": 1}))
 
   if not all_customers:
     print("\n Error: No customers found in the database! ")
