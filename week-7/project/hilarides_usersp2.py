@@ -51,7 +51,7 @@ print(db.users.find_one({"employeeId": "1013"}))
 db.users.delete_one({"employeeId": "1013"})
 
 # Display the results of the query
-# print(result)
+print(result)
 
 # Prove the delete worked by searching the collection for the user by employeeId
 print(db.users.find_one({"employeeId": "1013"}))
