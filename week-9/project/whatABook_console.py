@@ -114,6 +114,7 @@ def display_books_by_genre(books_collection):
         print(f"{i}. {genre}")
 
     # Prompt user to select a genre
+    # Attribution: https://docs.python.org/3/library/stdtypes.html#str.strip
     try:
         choice = input("\nSelect a genre by number (or 'q' to go back): ").strip()
 
@@ -243,6 +244,8 @@ def main():
   customers_collection = db['customers']
 
   # Main program loop
+  # Attribution: https://docs.python.org/3/reference/compound_stmts.html#while and
+  # https://docs.python.org/3/tutorial/controlflow.html#if-statements
   while True:
     display_menu()
     choice = input("Enter your choice (1-4): ").strip()
