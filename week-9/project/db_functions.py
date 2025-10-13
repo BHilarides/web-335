@@ -48,7 +48,7 @@ def get_all_books(db):
 
 def get_books_by_genre(db, genre):
     """
-    Retrieves all books mataching a specific genre.
+    Retrieves all books matching a specific genre.
     """
     try:
         books = list(db.books.find({"genre": genre},{"_id": 0}))

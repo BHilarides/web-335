@@ -68,7 +68,7 @@ def display_books_by_genre(books_collection):
     print("-" * 65)
 
     # Get all genres from the collection
-    genres = books_collection.distinct("Genre")
+    genres = books_collection.distinct("genre")
 
     if not genres:
         print("No genres found in our database!")
@@ -92,7 +92,7 @@ def display_books_by_genre(books_collection):
             selected_genre = genres[choice_num - 1]
 
             # Find books in the selected genre
-            books_in_genre = list(books_collection.find({"Genre": selected_genre}))
+            books_in_genre = list(books_collection.find({"genre": selected_genre}))
 
             print(f"\n--- Books in Genre: '{selected_genre}' genre ---")
             if books_in_genre:
