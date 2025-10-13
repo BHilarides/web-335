@@ -3,6 +3,17 @@ Title: whatABook_bulldogs.py
 Author: Mariea Nies, Ben Hilarides
 Date: 10.9.25
 Description: WhatABook Bulldogs Edition
+
+Code Attribution: MongoDB connection and error handling patterns adapted from PyMongo documentation
+https://pymongo.readthedocs.io/en/stable/tutorial.html#connecting-to-mongodb
+URL encoding for MongoDB credentials using urllib.parse.quote_plus
+https://docs.python.org/3/library/urllib.parse.html
+Database query patterns and cursor handling from MongoDB Python Driver documentation
+https://pymongo.readthedocs.io/en/stable/api/pymongo/collection.html
+Console menu structure inspired by common CLI application designs
+https://realpython.com/python-command-line-interfaces-cli/
+Error handling for ConnectionFailure and ServerSelectionTimeoutError from PyMongo best practices
+https://pymongo.readthedocs.io/en/stable/api/pymongo/errors.html
 """
 
 # Import the MongoClient
@@ -13,10 +24,22 @@ from urllib.parse import quote_plus
 
 # Build a connection string to connect to client
 def connect_to_database():
+  '''
+  Establishes connection to MongoDB cluster.
 
+  Returns:
+    db: MongoDB database object for 'WhatABook' database.
+
+  Raises:
+    ConnectionFailure: If unable to connect to MongoDB server.
+    ServerSelectionTimeoutError: If server selection times out.
+
+  Attribution: Connection pattern adapted from PyMongo documentation.
+  '''
   try:
 
     # Properly encode password to handle special characters
+    # Attribution: URL encoding pattern from urllib.parse.documentation
     username = "web335_admin"
     password = "J14M7AFCWMF0Hc5D"
     cluster = "bellevueuniversity.qvr6m2e.mongodb.net"
@@ -43,6 +66,14 @@ def connect_to_database():
 
 # Display a list of all books in the collection
 def display_all_books(books_collection):
+  '''
+  Retrieves and displays all books from the 'books' collection.
+
+  Args:
+    books_collection: The MongoDB collection object for 'books'.
+
+  Attribution: MongoDB find() query pattern from PyMongo documentation.
+  '''
   print("\n" + "-" * 65)
   print("\n  -- DISPLAYING all BOOKS in our database --")
   print("-" * 65)
