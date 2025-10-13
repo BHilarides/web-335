@@ -1,5 +1,5 @@
 """
-Title: whatABook_bulldogs.py
+Title: whatABook_console.py
 Author: Mariea Nies, Ben Hilarides
 Date: 10.9.25
 Description: WhatABook Bulldogs Edition
@@ -7,11 +7,11 @@ Description: WhatABook Bulldogs Edition
 Code Attribution: MongoDB connection and error handling patterns adapted from PyMongo documentation
 https://pymongo.readthedocs.io/en/stable/tutorial.html#connecting-to-mongodb
 URL encoding for MongoDB credentials using urllib.parse.quote_plus
-https://docs.python.org/3/library/urllib.parse.html
+https://www.mongodb.com/docs/languages/python/pymongo-driver/v4.8/security/authentication/x509/
 Database query patterns and cursor handling from MongoDB Python Driver documentation
 https://pymongo.readthedocs.io/en/stable/api/pymongo/collection.html
 Console menu structure inspired by common CLI application designs
-https://realpython.com/python-command-line-interfaces-cli/
+https://dribbble.com/tags/cli
 Error handling for ConnectionFailure and ServerSelectionTimeoutError from PyMongo best practices
 https://pymongo.readthedocs.io/en/stable/api/pymongo/errors.html
 """
@@ -39,7 +39,8 @@ def connect_to_database():
   try:
 
     # Properly encode password to handle special characters
-    # Attribution: URL encoding pattern from urllib.parse.documentation
+    # Attribution: URL encoding pattern from urllib.parse.documentation https://docs.python.org/3/library/urllib.parse.html
+
     username = "web335_admin"
     password = "J14M7AFCWMF0Hc5D"
     cluster = "bellevueuniversity.qvr6m2e.mongodb.net"
@@ -73,6 +74,8 @@ def display_all_books(books_collection):
     books_collection: The MongoDB collection object for 'books'.
 
   Attribution: MongoDB find() query pattern from PyMongo documentation.
+    Python enumerate() function for indexing from Python standard library
+    https://docs.python.org/3/library/functions.html#enumerate
   '''
   print("\n" + "-" * 65)
   print("\n  -- DISPLAYING all BOOKS in our database --")
@@ -144,6 +147,12 @@ def display_books_by_genre(books_collection):
 
 # Display a users wishlist by customerId
 def display_customer_wishlist(customers_collection):
+  '''
+  Retrieves and displays a customer's wishlist by their customerId.
+  Args:
+    customers_collection: The MongoDB collection object for 'customers'.
+  Attribution: MongoDB find_one() query pattern from PyMongo documentation.
+  '''
   print("\n" + "-" * 65)
   print("\n  -- DISPLAYING CUSTOMER WISHLIST --")
   print("-" * 65)
