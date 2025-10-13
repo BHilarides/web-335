@@ -9,13 +9,19 @@ Description: WhatABook Bulldogs Edition
 from pymongo import MongoClient
 from pymongo.errors import ConnectionFailure, ServerSelectionTimeoutError
 import sys
+from urllib.parse import quote_plus
 
 # Build a connection string to connect to client
 def connect_to_database():
 
   try:
 
-    uri = "mongodb+srv://web335_admin:"
+    # Properly encode password to handle special characters
+    username = "web335_admin"
+    password = "J14M7AFCWMF0Hc5D"
+    cluster = "bellevueuniversity.qvr6m2e.mongodb.net"
+
+    uri = f"mongodb+srv://{username}:{password}@{cluster}/?retryWrites=true&w=majority&appName=BellevueUniversity"
     client = MongoClient(uri, serverSelectionTimeoutMS=5000)
 
     # Test the connection
@@ -23,7 +29,7 @@ def connect_to_database():
     print("Connected to MongoDB successfully!")
 
     # Configure a variable to access the database
-    db = client['whatABook']
+    db = client['WhatABook']
     return db
   except (ConnectionFailure):
     print("Failed to connect to MongoDB. Please check connection string and network connectivity.")
