@@ -70,12 +70,11 @@ def display_all_books(books_collection):
   '''
   Retrieves and displays all books from the 'books' collection.
 
-  Args:
-    books_collection: The MongoDB collection object for 'books'.
-
   Attribution: MongoDB find() query pattern from PyMongo documentation.
     Python enumerate() function for indexing from Python standard library
     https://docs.python.org/3/library/functions.html#enumerate
+    Python len() function for counting items from Python standard library
+    https://docs.python.org/3/library/functions.html#len
   '''
   print("\n" + "-" * 65)
   print("\n  -- DISPLAYING all BOOKS in our database --")
@@ -109,6 +108,7 @@ def display_books_by_genre(books_collection):
         return
 
     # Display Genre Options
+    # Attribution: F Strings https://docs.python.org/3/reference/lexical_analysis.html#f-strings
     print("\nAvailable Genres:")
     for i, genre in enumerate(genres, 1):
         print(f"{i}. {genre}")
@@ -139,6 +139,8 @@ def display_books_by_genre(books_collection):
                 print(f"No books found in the '{selected_genre}' genre.")
         else:
             print("Invalid selection. Please choose a valid genre number.")
+    # Basic error handling
+    # Attribution: https://docs.python.org/3/tutorial/errors.html#handling-exceptions
     except ValueError:
         print("Invalid input. Please enter a number corresponding to a genre.")
     except Exception as e:
@@ -158,6 +160,7 @@ def display_customer_wishlist(customers_collection):
   print("-" * 65)
 
   # Get all available customer IDs from database
+  # Attribution: https://docs.python.org/3/tutorial/datastructures.html
   all_customers = list(customers_collection.find({}, {"customerId": 1, "firstName":1, "lastName": 1}))
 
   if not all_customers:
@@ -175,7 +178,9 @@ def display_customer_wishlist(customers_collection):
     cust_id = customer.get("customerId", "Unknown ID")
     first_name = customer.get("firstName", "Unknown First Name")
     last_name = customer.get("lastName", "Unknown Last Name")
+
     # Remove 'c' prefix for display
+    # Attribution: String manipulation from Python standard library https://docs.python.org/3/library/string.html
     display_id = cust_id[1:] if cust_id.startswith('c') else cust_id
     print(f"  ID: {display_id} - {first_name} - {last_name}")
     valid_customer_ids.append(cust_id)
@@ -217,6 +222,11 @@ def display_customer_wishlist(customers_collection):
   print("-" * 65)
 
 def display_menu():
+  """
+  Displays the main menu options to the user.
+  Attribution: Console menu structure inspired by common CLI application designs
+  https://dribbble.com/tags/cli
+  """
   print("\n" + "=" * 65)
   print("  -- WhatABook Bulldogs Edition: Main Menu --")
   print("=" * 65)
